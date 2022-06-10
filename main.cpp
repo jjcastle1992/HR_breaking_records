@@ -67,26 +67,29 @@ int main()
     getline(cin, scores_temp_temp);
 
     vector<string> scores_temp = split(rtrim(scores_temp_temp));
+    if (n >= 1 && n <= 1000) {
+        vector<int> scores(n);
 
-    vector<int> scores(n);
-
-    for (int i = 0; i < n; i++) {
-        int scores_item = stoi(scores_temp[i]);
-
-        scores[i] = scores_item;
-    }
-
-    vector<int> result = breakingRecords(scores);
-
-    for (size_t i = 0; i < result.size(); i++) {
-        fout << result[i];
-
-        if (i != result.size() - 1) {
-            fout << " ";
+        for (int i = 0; i < n; i++) {
+            int scores_item = stoi(scores_temp[i]);
+            if (scores_item >= 0 && scores_item <= 1e8){
+                scores[i] = scores_item;
+            }
         }
+
+        vector<int> result = breakingRecords(scores);
+
+        for (size_t i = 0; i < result.size(); i++) {
+            fout << result[i];
+
+            if (i != result.size() - 1) {
+                fout << " ";
+            }
+        }
+
+        fout << "\n";
     }
 
-    fout << "\n";
 
     fout.close();
 
