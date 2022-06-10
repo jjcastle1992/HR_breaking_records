@@ -23,11 +23,31 @@ vector<int> breakingRecords(vector<int> scores) {
     vector <int> scoreRecords;
 
     //Get the first game score to set the baseline.
+    firstGameScore = scores[0];
 
     //Set max and min to the first game score.
+    maxScore = firstGameScore;
+    minScore = firstGameScore;
 
     //Iterate through all the scores and compare to max and min scores. If a new record high or low, then increment
     //number of high/low scores.
+
+    for (int i = 0; i < scores.size(); i++ ) {
+        int currentScore = scores[i];
+        if (currentScore > maxScore) {
+            numHighScores++;
+        }
+        else if (currentScore < minScore) {
+            numLowScores++;
+        }
+        else {
+            if (currentScore < 0 ) {
+                std::cout << "ERROR: SCORE CANNOT BE NEGATIVE!" << std::endl;
+            }
+        }
+    }
+    scores.push_back(numHighScores);
+    scores.push_back(numLowScores);
 
     return scoreRecords;
 }
