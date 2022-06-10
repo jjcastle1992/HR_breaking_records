@@ -48,8 +48,8 @@ vector<int> breakingRecords(vector<int> scores) {
             }
         }
     }
-    scores.push_back(numHighScores);
-    scores.push_back(numLowScores);
+    scoreRecords.push_back(numHighScores);
+    scoreRecords.push_back(numLowScores);
 
     return scoreRecords;
 }
