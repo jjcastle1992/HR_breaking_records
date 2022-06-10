@@ -14,7 +14,22 @@ vector<string> split(const string &);
  */
 
 vector<int> breakingRecords(vector<int> scores) {
+    int numberOfGames = 0;
+    int firstGameScore = 0;
+    int maxScore = 0;
+    int minScore = 0;
+    int numHighScores = 0;
+    int numLowScores = 0;
+    vector <int> scoreRecords;
 
+    //Get the first game score to set the baseline.
+
+    //Set max and min to the first game score.
+
+    //Iterate through all the scores and compare to max and min scores. If a new record high or low, then increment
+    //number of high/low scores.
+
+    return scoreRecords;
 }
 
 int main()
