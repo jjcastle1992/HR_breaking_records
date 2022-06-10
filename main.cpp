@@ -32,12 +32,14 @@ vector<int> breakingRecords(vector<int> scores) {
     //Iterate through all the scores and compare to max and min scores. If a new record high or low, then increment
     //number of high/low scores.
 
-    for (int i = 0; i < scores.size(); i++ ) {
+    for (int i = 1; i < scores.size(); i++ ) {
         int currentScore = scores[i];
         if (currentScore > maxScore) {
+            maxScore = currentScore;
             numHighScores++;
         }
         else if (currentScore < minScore) {
+            minScore = currentScore;
             numLowScores++;
         }
         else {
